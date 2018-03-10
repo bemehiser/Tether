@@ -1,6 +1,6 @@
 # ClockworkMod Tether (Linux Driver)
 
-This is a publicly edited version of the [publically available source code](http://download.clockworkmod.com/tether/Tether.apk), owned by [ClockworkMod](https://www.clockworkmod.com/). To use this, you need the [ClockworkMod Tether app](https://play.google.com/store/apps/details?id=com.koushikdutta.tether), available from the [Google Play Store](https://play.google.com/store).
+This is a publicly edited version of the [publicly available source code](http://download.clockworkmod.com/tether/Tether.apk), owned by [ClockworkMod](https://www.clockworkmod.com/). To use this, you need the [ClockworkMod Tether app](https://play.google.com/store/apps/details?id=com.koushikdutta.tether), available from the [Google Play Store](https://play.google.com/store).
 
 #### Running Tether on Linux
 
