@@ -1,0 +1,7 @@
+Running Tether on Linux:
+
+# at the top level directory of the package:
+sudo linux/run.sh
+
+On the first run of Tether, node.js will be compiled. This will take a few minutes.
+
