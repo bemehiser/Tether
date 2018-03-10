@@ -26,8 +26,8 @@ if [ ! -f "$NODE/node" ]
 then
   echo Please compile the included node.js package before running Tether!
   echo cd $NODE
-  echo ./configure
-  echo make
+  echo ./configure --without-snapshot
+  echo CXXFLAGS=-fpermissive make
   exit 1
 fi
 
