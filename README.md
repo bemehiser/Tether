@@ -16,3 +16,7 @@ On the first run of Tether, node.js will be compiled. This will take a few minut
     make distclean
     ./configure --without-snapshot
     CXXFLAGS=-fpermissive make
+
+#### Bugs
+
+- [Cannot find module 'chainsaw'](https://github.com/bemehiser/Tether/issues/1) - Try using native nodejs and adb installation.
