@@ -2,6 +2,10 @@
 
 This is a publicly edited version of the [publicly available source code](http://download.clockworkmod.com/tether/Tether.apk), owned by [ClockworkMod](https://www.clockworkmod.com/). To use this, you need the [ClockworkMod Tether app](https://play.google.com/store/apps/details?id=com.koushikdutta.tether), available from the [Google Play Store](https://play.google.com/store).
 
+## Development
+
+If you find a bug, fix it. This isn't my code - it's just a tweak on the ClockworkMod Tether public Linux driver code. If you do fix something, I'll promptly review and merge it.
+
 #### Running Tether on Linux
 
 At the top level directory of the package, run
