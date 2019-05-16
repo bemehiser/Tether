@@ -2276,18 +2276,18 @@ bool PagedSpace::AdvanceSweeper(intptr_t bytes_to_sweep) {
 
   intptr_t freed_bytes = 0;
   Page* p = first_unswept_page_;
-  // do {
-  //   Page* next_page = p->next_page();
-  //   if (ShouldBeSweptLazily(p)) {
-  //     if (FLAG_gc_verbose) {
-  //       PrintF("Sweeping 0x%" V8PRIxPTR " lazily advanced.\n",
-  //              reinterpret_cast<intptr_t>(p));
-  //     }
-  //     DecreaseUnsweptFreeBytes(p);
-  //     freed_bytes += MarkCompactCollector::SweepConservatively(this, p);
-  //   }
-  //   p = next_page;
-  // } while (p != anchor() && freed_bytes < bytes_to_sweep);
+  do {
+    Page* next_page = p->next_page();
+    if (ShouldBeSweptLazily(p)) {
+      if (FLAG_gc_verbose) {
+        PrintF("Sweeping 0x%" V8PRIxPTR " lazily advanced.\n",
+               reinterpret_cast<intptr_t>(p));
+      }
+      DecreaseUnsweptFreeBytes(p);
+      freed_bytes += MarkCompactCollector::SweepConservatively(this, p);
+    }
+    p = next_page;
+  } while (p != anchor() && freed_bytes < bytes_to_sweep);
 
   if (p == anchor()) {
     first_unswept_page_ = Page::FromAddress(NULL);
@@ -2321,7 +2321,7 @@ HeapObject* PagedSpace::SlowAllocateRaw(int size_in_bytes) {
 
   // If there are unswept pages advance lazy sweeper then sweep one page before
   // allocating a new page.
-  if (first_unswept_page_->is_valid()) {
+  if (Page::IsValid(first_unswept_page_)) {
     AdvanceSweeper(size_in_bytes);
 
     // Retry the free list allocation.
@@ -2678,7 +2678,7 @@ LargePage* LargeObjectSpace::FindPage(Address a) {
   if (e != NULL) {
     ASSERT(e->value != NULL);
     LargePage* page = reinterpret_cast<LargePage*>(e->value);
-    ASSERT(page->is_valid());
+    ASSERT(Page::IsValid(page));
     if (page->Contains(a)) {
       return page;
     }
