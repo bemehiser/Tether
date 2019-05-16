@@ -2321,7 +2321,7 @@ HeapObject* PagedSpace::SlowAllocateRaw(int size_in_bytes) {
 
   // If there are unswept pages advance lazy sweeper then sweep one page before
   // allocating a new page.
-  if (first_unswept_page_->is_valid()) {
+  if (Page::IsValid(first_unswept_page_)) {
     AdvanceSweeper(size_in_bytes);
 
     // Retry the free list allocation.
@@ -2678,7 +2678,7 @@ LargePage* LargeObjectSpace::FindPage(Address a) {
   if (e != NULL) {
     ASSERT(e->value != NULL);
     LargePage* page = reinterpret_cast<LargePage*>(e->value);
-    ASSERT(page->is_valid());
+    ASSERT(Page::IsValid(page));
     if (page->Contains(a)) {
       return page;
     }

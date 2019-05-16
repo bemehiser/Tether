@@ -308,6 +308,8 @@ class MemoryChunk {
   // Only works for addresses in pointer spaces, not data or code spaces.
   static inline MemoryChunk* FromAnyPointerAddress(Address addr);
 
+  static bool IsValid(MemoryChunk* chunk) { return chunk != NULL; }
+
   Address address() { return reinterpret_cast<Address>(this); }
 
   bool is_valid() { return address() != NULL; }
@@ -1605,7 +1607,7 @@ class PagedSpace : public Space {
   bool AdvanceSweeper(intptr_t bytes_to_sweep);
 
   bool IsSweepingComplete() {
-    return !first_unswept_page_->is_valid();
+    return !Page::IsValid(first_unswept_page_);
   }
 
   Page* FirstPage() { return anchor_.next_page(); }
