@@ -322,7 +322,7 @@ def compiler_version():
 
   is_clang = 'clang' in proc.communicate()[0].split('\n')[0]
 
-  proc = subprocess.Popen(CC.split() + ['-dumpversion'], stdout=subprocess.PIPE)
+  proc = subprocess.Popen(CC.split() + ['-dumpversion', '-dumpfullversion'], stdout=subprocess.PIPE)
   version = tuple(map(int, proc.communicate()[0].split('.')))
 
   return (version, is_clang)
