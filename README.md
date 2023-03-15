@@ -23,4 +23,4 @@ On the first run of Tether, node.js will be compiled. This will take a few minut
 
 #### Bugs
 
-- [Cannot find module 'chainsaw'](https://github.com/bemehiser/Tether/issues/1) - Try using native nodejs and adb installation.
+Bugs are tracked in [Github Issues](https://github.com/bemehiser/Tether/issues)
