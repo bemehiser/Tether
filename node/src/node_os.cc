@@ -249,7 +249,7 @@ static Handle<Value> SetupTun(const Arguments& args) {
 #include <net/if.h>
 #include <linux/if_tun.h>
 #include <memory.h>
-#include <stropts.h>
+#include <sys/ioctl.h>
 #include <asm-generic/ioctl.h>
 
 static Handle<Value> SetupTun(const Arguments& args) {
