@@ -1,43 +1,82 @@
 {
   "name": "npm-test-shrinkwrap",
   "version": "0.0.0",
-  "dependencies": {
-    "npm-test-single-file": {
-      "version": "1.2.3",
-      "from": "https://raw.github.com/gist/1837112/index.js"
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "version": "0.0.0",
+      "dependencies": {
+        "glob": "git://github.com/isaacs/node-glob.git#npm-test",
+        "minimatch": "~0.1.0",
+        "npm-test-single-file": "https://raw.github.com/gist/1837112/index.js"
+      }
     },
-    "glob": {
+    "node_modules/glob": {
       "version": "3.1.5",
-      "from": "git://github.com/isaacs/node-glob.git#npm-test",
+      "resolved": "git+ssh://git@github.com/isaacs/node-glob.git#npm-test",
+      "integrity": "sha512-iZA8FyYy1veSBXA5OGs0NpZXwnZPwM4DeB8aJ3eOpT+iE57scGN4nkj6FRIVAKaVZ/2CZgOq98pdlFxks1Wc3w==",
+      "bundleDependencies": [
+        "minimatch"
+      ],
       "dependencies": {
-        "minimatch": {
-          "version": "0.2.1",
-          "dependencies": {
-            "lru-cache": {
-              "version": "1.0.5"
-            }
-          }
-        },
-        "graceful-fs": {
-          "version": "1.1.5",
-          "dependencies": {
-            "fast-list": {
-              "version": "1.0.2"
-            }
-          }
-        },
-        "inherits": {
-          "version": "1.0.0"
-        }
+        "graceful-fs": "~1.1.2",
+        "inherits": "1",
+        "minimatch": "0.2"
+      },
+      "engines": {
+        "node": "*"
       }
     },
-    "minimatch": {
-      "version": "0.1.5",
+    "node_modules/glob/node_modules/graceful-fs": {
+      "version": "1.1.5",
+      "integrity": "sha512-dCktlWOQ5aKKs3vMS8RENFzcARKPdOczzkcZRnxVTniAx5221IAJYhzjZUKnYhhbuu6xAZcMoABBIdVZmDB/6g==",
+      "deprecated": "please upgrade to graceful-fs 4 for compatibility with current and future versions of Node.js",
       "dependencies": {
-        "lru-cache": {
-          "version": "1.0.5"
-        }
+        "fast-list": "1"
+      },
+      "engines": {
+        "node": ">=0.4.0"
       }
+    },
+    "node_modules/glob/node_modules/graceful-fs/node_modules/fast-list": {
+      "version": "1.0.2",
+      "integrity": "sha512-pATOw4Bx/xL3LUISw9ANnD/+15Gpky/EaeNbTSzBM2fIxu9E34dtg/SmR5UKLG1YKltn0JkZm6O3URknAD+2oQ==",
+      "engines": {
+        "node": "*"
+      }
+    },
+    "node_modules/glob/node_modules/inherits": {
+      "version": "1.0.0",
+      "integrity": "sha512-5KfXESjCAfFQel2TLqhr18NEz++UiWVIA0jwHzs2Kbvb3e+r+G/eVhRfoZbaPCL0PnERvK5YeMgh02O4eenufw==",
+      "engines": {
+        "node": "*"
+      }
+    },
+    "node_modules/glob/node_modules/minimatch": {
+      "version": "0.2.1",
+      "inBundle": true
+    },
+    "node_modules/minimatch": {
+      "version": "0.1.5",
+      "integrity": "sha512-KFPxSmc7KgXLngf9Y6mZmg+uCySJ/rqeLkHbZK+ygcPtzQvN9XGBbgFMPO8pfFYEKFgOUAE0RmXFIQtoRc7VHg==",
+      "deprecated": "Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue",
+      "dependencies": {
+        "lru-cache": "~1.0.5"
+      },
+      "engines": {
+        "node": "*"
+      }
+    },
+    "node_modules/minimatch/node_modules/lru-cache": {
+      "version": "1.0.5",
+      "integrity": "sha512-78LsxOtsCtZe6QOYdrBnSlI8j0r7bal9Les5ZQH0njXtAuKLQpwd2UOTe0+r0CzKsDeH/ujYXJNCswYj6Mq9Tg==",
+      "engines": {
+        "node": "*"
+      }
+    },
+    "node_modules/npm-test-single-file": {
+      "resolved": "https://raw.github.com/gist/1837112/index.js"
     }
   }
 }
